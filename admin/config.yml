@@ -4,8 +4,6 @@ backend:
   turbo_site_id: 0c3d4ca7-43fd-4a93-bcb4-88548b9f29bc
   branch: main
 
-publish_mode: editorial_workflow
-
 media_folder: assets/img/uploads
 public_folder: /assets/img/uploads
 
