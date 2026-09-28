@@ -25,6 +25,30 @@ This starter bundles those files from the latest **Chirpy** release along with a
 
 Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
 
+## Decap CMS
+
+The CMS is available at <https://vanillaturtlechips.github.io/admin/>.
+It edits posts in `_posts/` and stores uploaded images in `assets/img/uploads/`.
+
+The GitHub backend requires an OAuth server before the first login. GitHub
+Pages only hosts the CMS UI, so choose one of these authentication options:
+
+- **Decap Turbo:** sign up at <https://turbo.decapcms.org/signup>, create a site
+  for this repository, then replace the `backend` block in
+  `admin/config.yml` with the `turbo-github` configuration and the generated
+  `turbo_site_id`.
+- **Self-hosted OAuth proxy:** create a GitHub OAuth App and deploy an OAuth
+  proxy such as the [Decap Cloudflare Worker template][decap-proxy]. Set its
+  URL as `backend.base_url` and its auth path as `backend.auth_endpoint`.
+
+After authentication is configured, open `/admin/` and sign in with an account
+that has write access to this repository.
+
+The CMS creates editorial workflow pull requests. Merging one updates the
+Markdown source, which triggers the existing GitHub Pages workflow.
+
+[decap-proxy]: https://github.com/sterlingwes/decap-proxy
+
 ## Contributing
 
 This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.

@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: vanillaturtlechips/vanillaturtlechips.github.io
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: assets/img/uploads
+public_folder: /assets/img/uploads
+
+collections:
+  - name: posts
+    label: Posts
+    label_singular: Post
+    folder: _posts
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: posts/{{slug}}
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Date
+        name: date
+        widget: datetime
+        format: "YYYY-MM-DD HH:mm:ss Z"
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm:ss Z"
+        default: ""
+      - label: Categories
+        name: categories
+        widget: list
+        required: false
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+      - label: Math
+        name: math
+        widget: boolean
+        required: false
+        default: false
+      - label: Body
+        name: body
+        widget: markdown
