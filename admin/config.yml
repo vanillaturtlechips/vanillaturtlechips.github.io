@@ -1,5 +1,6 @@
 backend:
   name: turbo-github
+  repo: vanillaturtlechips/vanillaturtlechips.github.io
   turbo_site_id: 0c3d4ca7-43fd-4a93-bcb4-88548b9f29bc
   branch: main
 
